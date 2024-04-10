@@ -650,5 +650,12 @@ LRESULT Win32_Window::handleWin32Messages(UINT msg, WPARAM wParam, LPARAM lParam
     default:
         break;
     }
-    return ::DefWindowProc(_window, msg, wParam, lParam);
+
+    if (windowProcedure)
+    {
+        return ::CallWindowProc(windowProcedure, _window, msg, wParam, lParam);
+    }
+    {
+        return ::DefWindowProc(_window, msg, wParam, lParam);
+    }
 }

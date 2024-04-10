@@ -191,6 +191,11 @@ namespace vsgWin32
 
         LRESULT handleWin32Messages(UINT msg, WPARAM wParam, LPARAM lParam);
 
+        // callback to use when integrating with exisiting Windows where
+        // you need to pass on the events, for further info see MS docs:
+        // https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-callwindowproca
+        WNDPROC windowProcedure = nullptr;
+
     protected:
         virtual ~Win32_Window();
 
