@@ -166,6 +166,9 @@ namespace vsgWin32
         }
     }
 
+    /// our windows events callback
+    LRESULT CALLBACK Win32WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
     /// Win32_Window implements Win32 specific window creation, event handling and vulkan Surface setup.
     class Win32_Window : public vsg::Inherit<vsg::Window, Win32_Window>
     {
